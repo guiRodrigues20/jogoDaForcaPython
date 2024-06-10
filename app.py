@@ -1,11 +1,11 @@
 import random
 
-# Passo 1: Escolher uma Palavra Aleatória
+
 def escolher_palavra():
     palavras = ["desenvolvimento", "tecnologia", "logica", "programacao", "tendencias"]
     return random.choice(palavras)
 
-# Passo 2: Criar a Função de Exibir a Forca
+
 def exibir_forca(tentativas):
     estagios = [
         """
@@ -74,7 +74,7 @@ def exibir_forca(tentativas):
     ]
     print(estagios[tentativas])
 
-# Passo 3: Iniciar o Jogo
+
 def jogar():
     palavra = escolher_palavra()
     palavra_oculta = ["_"] * len(palavra)
@@ -85,7 +85,7 @@ def jogar():
     print("Adivinhe a palavra:")
     print(" ".join(palavra_oculta))
     
-    # Passo 4: Loop Principal do Jogo
+    
     while True:
         letra = input("\nDigite uma letra: ").lower()
         
@@ -105,7 +105,7 @@ def jogar():
             exibir_forca(tentativas)
             print(" ".join(palavra_oculta))
         
-        # Passo 5: Verificação de Vitória e Derrota
+       
         if "_" not in palavra_oculta:
             print("Parabéns! Você adivinhou a palavra!")
             break
@@ -114,8 +114,8 @@ def jogar():
             print(f"Você perdeu! A palavra era '{palavra}'.")
             break
     
-    # Passo 6: Finalização do Jogo
+  
     print("Obrigado por jogar!")
 
-# Executa o jogo
+
 jogar()
